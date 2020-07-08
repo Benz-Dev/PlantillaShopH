@@ -1,0 +1,251 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    a{
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+
+// Keyframes
+@keyframes coloresarco {
+    from{
+        background-color: rgb(252, 44, 44);
+    }
+    to{
+        background-color: rgb(247, 71, 167);
+    }
+  }
+
+  .epic{
+    animation: coloresarco 1s ease infinite alternate;
+  }
+
+
+$colorprincipal: #484848;
+
+
+// CAJON
+.box{
+    position: fixed;
+    top: 0;
+    background-color: whitesmoke;
+    bottom: 0;
+    right: 0;
+    width: 50%; // HEADER SECTION TOP
+    //display: none;
+    .header-box{
+        display: block;
+        margin:0 50px ;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 20px;
+            width: 100%;
+            background-color: $colorprincipal;
+        }
+        .section-1{
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .title{
+                display: flex;
+                color: #3F3F3F;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 300;
+                font-size: 25px;
+                text-transform: capitalize;
+                align-items: center;
+                i{
+                    margin-right: 7px;
+                    transform: rotate(45deg);
+                    color: white;
+                    background-color: $colorprincipal;
+                    //padding:10px 10px;
+                    padding: 17px;
+                    font-size: 20px;
+                    clip-path: circle(37% at 50% 50%);
+                    border-radius: 400px;
+                }
+                            }
+            .tools{
+                font-size: 25px;
+                color: $colorprincipal;
+                i {
+                    margin-left: 10px;
+                    cursor: pointer;
+                    transition: .5s;
+                }
+                i:hover{
+                    color: black;
+                }
+                i:first-of-type{ 
+                    margin-left: 0;
+                }
+            }
+        }       // Navbar 
+        .navbar{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+    }
+    .body{
+        margin-top: 20px;
+        position: relative;
+        overflow-y: scroll;
+        height: calc(100% - 195px);
+        .search{
+            padding: 15px;
+            background-color: $colorprincipal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::after{
+                content: '';
+                background-color: $colorprincipal;
+                clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                position: absolute;
+                transform: rotate(180deg);
+                top: 4rem;
+                left: 50%;
+                width: 30px;
+                height: 25px;
+            }
+            i{
+                color: white;
+                font-size: 30px;
+                padding-right: 20px;
+            }
+            input{
+                text-align: center;
+                width: 600px;
+                padding: 10px;
+                font-size: 16px;
+                background-color: #797979;
+                outline: none;
+                border: none;
+                color: white;
+            }
+        }
+    }
+}
+
+input::placeholder{
+    color: rgb(197, 196, 196);
+}
+
+// Catalogo
+table{
+    margin-left: 49px;
+}
+
+
+tr{
+    float: left;
+    margin-top: 3rem;
+    margin-right: 50px;
+}
+
+td::last-of-type{
+    padding-right: 0;
+}
+
+.catafurni{
+    width: 120px;
+    height: 120px;
+    margin-top: 20px;
+    position: relative;
+    .name{
+        overflow: hidden;
+        white-space: nowrap;
+        background-color: $colorprincipal;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        color: white;
+        text-transform: capitalize;
+        padding: 5px;
+        max-width: 100%;
+        text-overflow:ellipsis;
+        font-size: 16px;
+        text-align: center;
+    }
+    .precio{
+        color: $colorprincipal;
+        display: flex;
+        background-color: white;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 13px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        position: absolute;
+        right: 0;
+        padding: 3px;
+        width: 50px;
+        height: 12px;
+        border: 2px solid $colorprincipal;
+        border-top: none;
+        img{
+            width: 13px;
+            image-rendering: pixelated;
+        }
+    }
+    .img{
+        padding-top: 15px;
+        width: 120px;
+        height: 90px;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@700&display=swap');
+    .class{
+        text-transform: uppercase;
+        background-color: $colorprincipal;
+        color: white;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        padding: 3px;
+        text-align: center;
+        font-family: 'Miriam Libre', sans-serif;
+        margin: 0;
+    }
+}
+
+// Generales
+.btn{
+    padding: 12px 10px;
+    border-radius: 3px;
+    text-align: center;
+    width: 130px;
+    //height: 35px;
+    font-size: 20px;
+    margin-right: 15px;
+}
+.btn::last-of-type{
+    margin-right: 0;
+}
+
+.grey{
+    background-color: #A8A8A8;
+}
+
+.cyan{
+    background-color: #5CC9FF;
+}
+
+.green{
+    background-color: #31F89B;
+}
+
+.rose{
+    background-color: #FF80F7;
+}
+
+.active{
+    display: block!important;
+}
